@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoEnergy - Powering a Sustainable Future</title>
+    <link rel="stylesheet" >
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    :root {
+        --primary-color: #4CAF50;
+        --secondary-color: #2196F3;
+        --text-color: #333;
+        --background-color: #f4f4f4;
+        --footer-color: #333;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        line-height: 1.8;
+        color: var(--text-color);
+        background-color: var(--background-color);
+    }
+    
+    header {
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5%;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+    
+    .nav-links {
+        display: flex;
+        list-style: none;
+    }
+    
+    .nav-links li {
+        margin-left: 1rem;
+    }
+    
+    .nav-links a {
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: var(--primary-color);
+    }
+    
+    .burger {
+        display: none;
+        cursor: pointer;
+    }
+    
+    .burger div {
+        width: 25px;
+        height: 3px;
+        background-color: var(--text-color);
+        margin: 5px;
+        transition: all 0.3s ease;
+    }
+    
+    main {
+        padding-top: 80px;
+    }
+    
+    .content-section {
+        padding: 3rem 5%;
+    }
+    
+    h1, h2, h3 {
+        margin-bottom: 1rem;
+    }
+    
+    h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 2.8rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    p {
+        margin-bottom: 1rem;
+    }
+    
+    ul {
+        list-style-type: none;
+        margin-bottom: 1rem;
+    }
+    
+    li {
+        margin-bottom: 0.8rem;
+    }
+    
+    .two-column,
+    .three-column {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 3rem;
+    }
+    
+    .two-column > div,
+    .three-column > div {
+        flex: 1 1 45%;
+        margin-bottom: 2rem;
+    }
+    
+    .three-column > div {
+        flex: 1 1 30%;
+    }
+    
+    .image-container {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .image-container img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    #hero {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://blog.shoptexaselectricity.com/wp-content/uploads/2023/06/energy_conservation.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+    }
+    
+    #hero h1 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+    
+    #hero p {
+        font-size: 1.5rem;
+    }
+    
+    #cta {
+        text-align: center;
+        background-color: var(--secondary-color);
+        color: #fff;
+    }
+    
+    .cta-button {
+        display: inline-block;
+        background-color: var(--primary-color);
+        color: #fff;
+        padding: 0.8rem 2rem;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .cta-button:hover {
+        background-color: #45a049;
+    }
+    
+    footer {
+        background-color: var(--footer-color);
+        color: #fff;
+        padding: 4rem 5% 2rem;
+    }
+    
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 3rem;
+    }
+    
+    .footer-section {
+        flex: 1 1 20%;
+    }
+    
+    .footer-section h3 {
+        color: #fff;
+        margin-bottom: 1rem;
+    }
+    
+    .footer-section ul {
+        list-style: none;
+    }
+    
+    .footer-section ul li {
+        margin-bottom: 0.5rem;
+    }
+    
+    .footer-section a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    .footer-section a:hover {
+        color: #fff;
+    }
+    
+    .social-icons {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .social-icons a {
+        color: #fff;
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+        color: var(--primary-color);
+    }
+    
+    #newsletter-form {
+        display: flex;
+        margin-top: 1rem;
+    }
+    
+    #newsletter-form input {
+        flex-grow: 1;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 4px 0 0 4px;
+    }
+    
+    #newsletter-form button {
+        background-color: var(--primary-color);
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    #newsletter-form button:hover {
+        background-color: #45a049;
+    }
+    
+    .footer-bottom {
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #555;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .nav-links {
+            display: none;
+        }
+    
+        .burger {
+            display: block;
+        }
+    
+        .nav-active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            right: 0;
+            top: 70px;
+            background-color: #fff;
+            width: 50%;
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in;
+        }
+    
+        .nav-active li {
+            opacity: 0;
+        }
+    
+        .two-column > div,
+        .three-column > div {
+            flex: 1 1 100%;
+        }
+    }
+    
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+</style>
+<body>
+    <header>
+        <nav>
+            <div class="logo">EcoEnergy</div>
+            <ul class="nav-links">
+                <li><a href="#intro" class="active"><i class="fas fa-sun"></i> Introduction</a></li>
+                <li><a href="#types"><i class="fas fa-wind"></i> Energy Types</a></li>
+                <li><a href="#methods"><i class="fas fa-bolt"></i> Conservation Methods</a></li>
+                <li><a href="#daily"><i class="fas fa-home"></i> Daily Life</a></li>
+                <li><a href="#industrial"><i class="fas fa-industry"></i> Industrial</a></li>
+                <li><a href="#policies"><i class="fas fa-book"></i> Policies</a></li>
+                <li><a href="#tech"><i class="fas fa-microchip"></i> Technology</a></li>
+                <li><a href="#benefits"><i class="fas fa-leaf"></i> Benefits</a></li>
+                <li><a href="#challenges"><i class="fas fa-exclamation-triangle"></i> Challenges</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1>Energy Conservation</h1>
+            <p>Powering a Sustainable Future</p>
+        </section>
+
+        <section id="intro" class="content-section">
+            <h2>Introduction to Energy Conservation</h2>
+            <div class="two-column">
+                <div>
+                    <p>Energy conservation is the practice of minimizing energy usage while achieving the same or improved output. It plays a crucial role in today's world, contributing to environmental protection, economic benefits, and sustainable development.</p>
+                    <ul>
+                        <li>Reduces carbon footprint</li>
+                        <li>Lowers energy costs</li>
+                        <li>Promotes sustainable resource use</li>
+                        <li>Enhances energy security</li>
+                    </ul>
+                </div>
+                <div class="image-container">
+                    <img src="data:image/jpeg;base64,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" alt="Energy Conservation Concept">
+                </div>
+            </div>
+        </section>
+
+        <section id="types" class="content-section">
+            <h2>Types of Energy Resources</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Renewable Energy</h3>
+                    <ul>
+                        <li>Solar</li>
+                        <li>Wind</li>
+                        <li>Hydro</li>
+                        <li>Biomass</li>
+                        <li>Geothermal</li>
+                    </ul>
+                    <h3>Non-renewable Energy</h3>
+                    <ul>
+                        <li>Coal</li>
+                        <li>Oil</li>
+                        <li>Natural Gas</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Why Conserve Non-renewable Resources?</h3>
+                    <p>Conserving non-renewable resources is crucial because:</p>
+                    <ul>
+                        <li>They are finite and will eventually run out</li>
+                        <li>Extraction and use often lead to environmental damage</li>
+                        <li>Reducing dependence increases energy security</li>
+                        <li>It helps mitigate climate change</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="methods" class="content-section">
+            <h2>Methods of Energy Conservation</h2>
+            <div class="three-column">
+                <div>
+                    <h3>Behavioral Changes</h3>
+                    <p>Simple lifestyle adjustments like turning off unused lights and appliances.</p>
+                </div>
+                <div>
+                    <h3>Energy-efficient Appliances</h3>
+                    <p>Using devices with Energy Star ratings or equivalent certifications.</p>
+                </div>
+                <div>
+                    <h3>Insulation and Building Design</h3>
+                    <p>Improved insulation, green buildings, and smart architecture to reduce energy consumption.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="daily" class="content-section">
+            <h2>Energy Conservation in Daily Life</h2>
+            <div class="three-column">
+                <div>
+                    <h3>Home</h3>
+                    <ul>
+                        <li>Smart thermostats</li>
+                        <li>LED lighting</li>
+                        <li>Low-flow water fixtures</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Transportation</h3>
+                    <ul>
+                        <li>Carpooling</li>
+                        <li>Using public transport</li>
+                        <li>Electric vehicles</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Workplace</h3>
+                    <ul>
+                        <li>Implementing energy-saving policies</li>
+                        <li>Using natural lighting</li>
+                        <li>Upgrading to efficient machinery</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="industrial" class="content-section">
+            <h2>Industrial Energy Conservation</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Energy Audits and Management</h3>
+                    <p>Regular energy audits to identify wastage and implement energy management systems.</p>
+                </div>
+                <div>
+                    <h3>Process Optimization</h3>
+                    <p>Reconfiguring production processes to minimize energy use without compromising output.</p>
+                </div>
+            </div>
+            <div class="two-column">
+                <div>
+                    <h3>Use of Renewable Energy Sources</h3>
+                    <p>Implementing solar panels, wind turbines, and waste-to-energy technologies in industrial settings.</p>
+                </div>
+                <div class="image-container">
+                    <img src="data:image/png;base64,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" alt="Industrial Energy Conservation">
+                </div>
+            </div>
+        </section>
+
+        <section id="policies" class="content-section">
+            <h2>Government Policies and Initiatives</h2>
+            <div class="three-column">
+                <div>
+                    <h3>Policies</h3>
+                    <p>Tax incentives for energy-efficient upgrades, grants for renewable energy projects.</p>
+                </div>
+                <div>
+                    <h3>Regulations</h3>
+                    <p>Standards like Energy Performance Certificates and emissions regulations.</p>
+                </div>
+                <div>
+                    <h3>Education and Awareness</h3>
+                    <p>Programs to raise awareness and encourage conservation practices.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tech" class="content-section">
+            <h2>Technological Innovations in Energy Conservation</h2>
+            <div class="three-column">
+                <div>
+                    <h3>Smart Grids</h3>
+                    <p>Real-time monitoring and efficient distribution of electricity.</p>
+                </div>
+                <div>
+                    <h3>IoT and Automation</h3>
+                    <p>Smart home devices, automated lighting and HVAC systems.</p>
+                </div>
+                <div>
+                    <h3>Advanced Energy Storage</h3>
+                    <p>Lithium-ion batteries, pumped storage, and other technologies to store and use renewable energy.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="content-section">
+            <h2>Benefits of Energy Conservation</h2>
+            <div class="three-column">
+                <div>
+                    <h3>Environmental Impact</h3>
+                    <p>Reduced greenhouse gas emissions, less pollution, and lower ecological footprint.</p>
+                </div>
+                <div>
+                    <h3>Economic Savings</h3>
+                    <p>Lower energy bills for individuals and reduced operational costs for businesses.</p>
+                </div>
+                <div>
+                    <h3>Enhanced Energy Security</h3>
+                    <p>Reduced dependence on non-renewable resources and foreign energy imports.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="challenges" class="content-section">
+            <h2>Challenges and Barriers</h2>
+            <div class="three-column">
+                <div>
+                    <h3>High Initial Costs</h3>
+                    <p>Energy-efficient technologies and renewable installations can be costly upfront.</p>
+                </div>
+                <div>
+                    <h3>Lack of Awareness</h3>
+                    <p>Insufficient knowledge about energy conservation methods and their benefits.</p>
+                </div>
+                <div>
+                    <h3>Technological Limitations</h3>
+                    <p>Some sectors lack viable alternatives to traditional energy-intensive methods.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="content-section">
+            <h2>Join the Energy Conservation Movement</h2>
+            <p>Every action counts. Start conserving energy today for a brighter tomorrow.</p>
+            <button class="cta-button">Get Started</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>EcoEnergy</h3>
+                <p>Powering a sustainable future through energy conservation.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#intro">About Us</a></li>
+                    <li><a href="#methods">Resources</a></li>
+                    <li><a href="#cta">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Stay updated with our latest news and tips.</p>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 EcoEnergy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
+            const sections = document.querySelectorAll('section');
+            const newsletterForm = document.getElementById('newsletter-form');
+        
+            // Toggle navigation
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('nav-active');
+        
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = '';
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+        
+                burger.classList.toggle('toggle');
+            });
+        
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        
+            // Active navigation highlight
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                        current = section.getAttribute('id');
+                    }
+                });
+        
+                navLinks.forEach(li => {
+                    li.classList.remove('active');
+                    if (li.querySelector('a').getAttribute('href').slice(1) === current) {
+                        li.classList.add('active');
+                    }
+                });
+            });
+        
+            // Newsletter form submission
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = e.target.querySelector('input[type="email"]').value;
+                // Here you would typically send this to your server or a third-party service
+                console.log(`Subscribing email: ${email}`);
+                alert('Thank you for subscribing to our newsletter!');
+                newsletterForm.reset();
+            });
+        
+            // Intersection Observer for fade-in effect
+            const faders = document.querySelectorAll('.fade-in');
+            const appearOptions = {
+                threshold: 0.5,
+                rootMargin: "0px 0px -100px 0px"
+            };
+        
+            const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('appear');
+                        appearOnScroll.unobserve(entry.target);
+                    }
+                });
+            }, appearOptions);
+        
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
+            });
+        });
+    </script>
+</body>
+</html>

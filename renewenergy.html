@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RenewPower - Harnessing Renewable Energy for a Sustainable Future</title>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #e74c3c;
+            --text-color: #2c3e50;
+            --background-color: #ecf0f1;
+            --footer-color: #34495e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+        
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+        
+        .burger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        main {
+            padding-top: 80px;
+        }
+        
+        .content-section {
+            padding: 3rem 5%;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.2rem;
+            color: var(--secondary-color);
+        }
+        
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin-bottom: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .two-column,
+        .three-column {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        
+        .two-column > div,
+        .three-column > div {
+            flex: 1 1 45%;
+            margin-bottom: 2rem;
+        }
+        
+        .three-column > div {
+            flex: 1 1 30%;
+        }
+        
+        .image-container {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        #hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+        
+        #hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        
+        #hero p {
+            font-size: 1.5rem;
+        }
+        
+        #cta {
+            text-align: center;
+            background-color: var(--secondary-color);
+            color: #fff;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #2980b9;
+        }
+        
+        footer {
+            background-color: var(--footer-color);
+            color: #fff;
+            padding: 4rem 5% 2rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        
+        .footer-section {
+            flex: 1 1 20%;
+        }
+        
+        .footer-section h3 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: #fff;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-icons a {
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+        
+        #newsletter-form {
+            display: flex;
+            margin-top: 1rem;
+        }
+        
+        #newsletter-form input {
+            flex-grow: 1;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 4px 0 0 4px;
+        }
+        
+        #newsletter-form button {
+            background-color: var(--secondary-color);
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        #newsletter-form button:hover {
+            background-color: #c0392b;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #3498db;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        
+            .burger {
+                display: block;
+            }
+        
+            .nav-active {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                right: 0;
+                top: 70px;
+                background-color: #fff;
+                width: 50%;
+                transform: translateX(100%);
+                transition: transform 0.5s ease-in;
+            }
+        
+            .nav-active li {
+                opacity: 0;
+            }
+        
+            .two-column > div,
+            .three-column > div {
+                flex: 1 1 100%;
+            }
+        }
+        
+        @keyframes navLinkFade {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">RenewPower</div>
+            <ul class="nav-links">
+                <li><a href="#intro" class="active"><i class="fas fa-info-circle"></i> Introduction</a></li>
+                <li><a href="#types"><i class="fas fa-solar-panel"></i> Energy Types</a></li>
+                <li><a href="#advantages"><i class="fas fa-chart-line"></i> Advantages</a></li>
+                <li><a href="#tech"><i class="fas fa-cogs"></i> Technologies</a></li>
+                <li><a href="#challenges"><i class="fas fa-exclamation-triangle"></i> Challenges</a></li>
+                <li><a href="#future"><i class="fas fa-rocket"></i> Future</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1>Renewable Energy</h1>
+            <p>Powering a Sustainable Future</p>
+        </section>
+
+        <section id="intro" class="content-section">
+            <h2>Introduction to Renewable Energy</h2>
+            <div class="two-column">
+                <div>
+                    <p>Renewable energy is derived from natural resources that are replenished on a human timescale. It plays a crucial role in reducing carbon emissions, combating climate change, and fostering sustainable growth.</p>
+                    <ul>
+                        <li>Reduces greenhouse gas emissions</li>
+                        <li>Combats climate change</li>
+                        <li>Fosters sustainable economic growth</li>
+                        <li>Provides long-term energy security</li>
+                    </ul>
+                </div>
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Renewable Energy Concept">
+                </div>
+            </div>
+        </section>
+
+        <section id="types" class="content-section">
+            <h2>Types of Renewable Energy Sources</h2>
+            <div class="three-column">
+                <div>
+                    <h3>Solar Energy</h3>
+                    <p>Capturing sunlight with photovoltaic cells or solar thermal systems.</p>
+                </div>
+                <div>
+                    <h3>Wind Energy</h3>
+                    <p>Using wind turbines to convert wind power into electricity.</p>
+                </div>
+                <div>
+                    <h3>Hydropower</h3>
+                    <p>Generating power from flowing or falling water, usually through dams.</p>
+                </div>
+                <div>
+                    <h3>Geothermal Energy</h3>
+                    <p>Utilizing Earth's internal heat for power generation and heating.</p>
+                </div>
+                <div>
+                    <h3>Biomass Energy</h3>
+                    <p>Converting organic materials (like wood, crop waste) into fuel and energy.</p>
+                </div>
+                <div>
+                    <h3>Ocean/Tidal Energy</h3>
+                    <p>Extracting energy from ocean tides, waves, and currents.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="advantages" class="content-section">
+            <h2>Advantages of Renewable Energy</h2>
+            <div class="three-column">
+                <div>
+                    <h3>Environmental Impact</h3>
+                    <p>Lower greenhouse gas emissions and reduced pollution.</p>
+                </div>
+                <div>
+                    <h3>Sustainability</h3>
+                    <p>Provides a long-term solution compared to finite fossil fuels.</p>
+                </div>
+                <div>
+                    <h3>Economic Benefits</h3>
+                    <p>Potential for job creation, lower energy costs over time, and reduced reliance on imported fuels.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tech" class="content-section">
+            <h2>Technologies in Renewable Energy</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Solar Panels and Solar Thermal Systems</h3>
+                    <p>Convert sunlight into electricity or heat.</p>
+                    <h3>Wind Turbines</h3>
+                    <p>Horizontal and vertical axis turbines for electricity generation.</p>
+                    <h3>Hydroelectric Dams and Micro-Hydro Systems</h3>
+                    <p>For large-scale and local water-based power generation.</p>
+                </div>
+                <div>
+                    <h3>Geothermal Plants and Heat Pumps</h3>
+                    <p>Systems for electricity production and direct heating.</p>
+                    <h3>Biofuel Processing Facilities</h3>
+                    <p>For producing biofuels like ethanol and biodiesel.</p>
+                    <h3>Energy Storage Solutions</h3>
+                    <p>Including batteries, pumped hydro, and thermal storage systems.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="challenges" class="content-section">
+            <h2>Challenges and Limitations of Renewable Energy</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Intermittency</h3>
+                    <p>Solar and wind are dependent on weather and daylight.</p>
+                    
+                    <h3>High Initial Costs</h3>
+                    <p>Significant capital needed for renewable installations.</p>
+                </div>
+                <div>
+                    <h3>Environmental and Land Use Concerns</h3>
+                    <p>Potential impacts on habitats, especially for large-scale hydro and wind.</p>
+                    <h3>Grid Integration</h3>
+                    <p>Adapting the power grid for variability and distributed generation.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="future" class="content-section">
+            <h2>Future of Renewable Energy</h2>
+            <div class="three-column">
+                <div>
+                    <h3>Technological Innovations</h3>
+                    <p>Advancements in solar efficiency, offshore wind, and new storage solutions.</p>
+                </div>
+                <div>
+                    <h3>Decentralized Energy Systems</h3>
+                    <p>Microgrids, peer-to-peer energy trading, and localized renewable projects.</p>
+                </div>
+                <div>
+                    <h3>Global Renewable Targets</h3>
+                    <p>International and national goals to increase the share of renewable energy in the power mix.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="content-section">
+            <h2>Join the Renewable Energy Revolution</h2>
+            <p>Every action counts. Start using renewable energy today for a sustainable tomorrow.</p>
+            <button class="cta-button">Get Involved</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>RenewPower</h3>
+                <p>Empowering a sustainable future through renewable energy solutions.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#intro">About Us</a></li>
+                    <li><a href="#types">Energy Types</a></li>
+                    <li><a href="#cta">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Stay updated with our latest news and tips.</p>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 RenewPower. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
+            const sections = document.querySelectorAll('section');
+            const newsletterForm = document.getElementById('newsletter-form');
+        
+            // Toggle navigation
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('nav-active');
+        
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = '';
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+        
+                burger.classList.toggle('toggle');
+            });
+        
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        
+            // Active navigation highlight
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                        current = section.getAttribute('id');
+                    }
+                });
+        
+                navLinks.forEach(li => {
+                    li.classList.remove('active');
+                    if (li.querySelector('a').getAttribute('href').slice(1) === current) {
+                        li.classList.add('active');
+                    }
+                });
+            });
+        
+            // Newsletter form submission
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = e.target.querySelector('input[type="email"]').value;
+                // Here you would typically send this to your server or a third-party service
+                console.log(`Subscribing email: ${email}`);
+                alert('Thank you for subscribing to our newsletter!');
+                newsletterForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>
